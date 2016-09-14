@@ -1,0 +1,3 @@
+12/05/2014
+~~~~~~~~~~
+- namdh: add "<br class=\"ajax-data-table-break\" />" after last paging
