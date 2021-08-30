@@ -1,6 +1,0 @@
-E:\DEV\ajax-data-table\ajax-data-table\bin\Debug\ajax-data-table.dll
-E:\DEV\ajax-data-table\ajax-data-table\bin\Debug\ajax-data-table.pdb
-E:\DEV\ajax-data-table\ajax-data-table\obj\Debug\ajax-data-table.csproj.AssemblyReference.cache
-E:\DEV\ajax-data-table\ajax-data-table\obj\Debug\ajax-data-table.csproj.CoreCompileInputs.cache
-E:\DEV\ajax-data-table\ajax-data-table\obj\Debug\ajax-data-table.dll
-E:\DEV\ajax-data-table\ajax-data-table\obj\Debug\ajax-data-table.pdb
