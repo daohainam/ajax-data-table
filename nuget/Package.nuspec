@@ -2,20 +2,21 @@
 <package >
   <metadata>
     <id>ajax-data-table</id>
-    <version>1.0.8.4</version>
+    <version>1.1.0.1</version>
     <authors>Dao Hai Nam</authors>
     <owners>Dao Hai Nam</owners>
 	<projectUrl>http://ajax-data-table.daohainam.com</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>ajax-data-table is a Javascript library for creating html table from JSON data, please visit http://ajax-data-table.daohainam.com/ for a live demo</description>
     <releaseNotes>
-	- Support grouping bulk action buttons
-	- Support bulk button [font-awesome] icon
+	- Added model library for .NET Standard 1.0
 	</releaseNotes>
     <copyright>Copyright 2015 by Dao Hai Nam</copyright>
     <tags>ajax data table</tags>
-    <dependencies>
-      <dependency id="jQuery" />
-    </dependencies>
+	<dependencies>
+		<group>
+		</group>
+		<group targetFramework="netstandard1.0">
+		</group>
+	</dependencies>
   </metadata>
 </package>

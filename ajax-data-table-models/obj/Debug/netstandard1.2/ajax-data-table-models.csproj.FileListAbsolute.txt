@@ -1,0 +1,9 @@
+E:\DEV\ajax-data-table\ajax-data-table-models\bin\Debug\netstandard1.2\ajax-data-table.deps.json
+E:\DEV\ajax-data-table\ajax-data-table-models\bin\Debug\netstandard1.2\ajax-data-table.dll
+E:\DEV\ajax-data-table\ajax-data-table-models\bin\Debug\netstandard1.2\ajax-data-table.pdb
+E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.2\ajax-data-table-models.csproj.AssemblyReference.cache
+E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.2\ajax-data-table-models.AssemblyInfoInputs.cache
+E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.2\ajax-data-table-models.AssemblyInfo.cs
+E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.2\ajax-data-table-models.csproj.CoreCompileInputs.cache
+E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.2\ajax-data-table.dll
+E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.2\ajax-data-table.pdb
