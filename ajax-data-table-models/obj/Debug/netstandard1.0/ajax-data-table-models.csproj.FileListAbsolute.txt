@@ -7,3 +7,14 @@ E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data
 E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table-models.csproj.CoreCompileInputs.cache
 E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table.dll
 E:\DEV\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table.pdb
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\bin\Debug\netstandard1.0\ajax-data-table.deps.json
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\bin\Debug\netstandard1.0\ajax-data-table.dll
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\bin\Debug\netstandard1.0\ajax-data-table.pdb
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table-models.csproj.AssemblyReference.cache
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table-models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table-models.AssemblyInfoInputs.cache
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table-models.AssemblyInfo.cs
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table-models.csproj.CoreCompileInputs.cache
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table-models.sourcelink.json
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table.dll
+C:\Users\dao.nam\source\repos\daohainam\ajax-data-table\ajax-data-table-models\obj\Debug\netstandard1.0\ajax-data-table.pdb

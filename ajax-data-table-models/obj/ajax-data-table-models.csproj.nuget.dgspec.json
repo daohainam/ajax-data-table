@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\DEV\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj": {}
+    "C:\\Users\\dao.nam\\source\\repos\\daohainam\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj": {}
   },
   "projects": {
-    "E:\\DEV\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj": {
+    "C:\\Users\\dao.nam\\source\\repos\\daohainam\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\DEV\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj",
+        "projectUniqueName": "C:\\Users\\dao.nam\\source\\repos\\daohainam\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj",
         "projectName": "ajax-data-table",
-        "projectPath": "E:\\DEV\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj",
-        "packagesPath": "C:\\Users\\namdh\\.nuget\\packages\\",
-        "outputPath": "E:\\DEV\\ajax-data-table\\ajax-data-table-models\\obj\\",
+        "projectPath": "C:\\Users\\dao.nam\\source\\repos\\daohainam\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj",
+        "packagesPath": "C:\\Users\\dao.nam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dao.nam\\source\\repos\\daohainam\\ajax-data-table\\ajax-data-table-models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\namdh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dao.nam\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -25,8 +25,9 @@
           "netstandard1.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/Hogia/_packaging/ISP/nuget/v3/index.json": {}
         },
         "frameworks": {
           "netstandard1.0": {
@@ -38,7 +39,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "netstandard1.0": {
@@ -50,7 +57,7 @@
               "autoReferenced": true
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
