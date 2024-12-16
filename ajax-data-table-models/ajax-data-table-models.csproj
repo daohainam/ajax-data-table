@@ -1,9 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netstandard1.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>ajax_data_table</RootNamespace>
     <AssemblyName>ajax-data-table</AssemblyName>
   </PropertyGroup>
-
 </Project>
