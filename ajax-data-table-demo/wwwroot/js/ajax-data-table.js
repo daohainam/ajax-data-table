@@ -18,7 +18,7 @@ AjaxDataTable.generate_id = function () {
 
     AjaxDataTable.auto_increment_id++;
 
-    for (var i = 0; i < string_length; i++) {
+    for (let i = 0; i < string_length; i++) {
         var rnum = Math.floor(Math.random() * chars.length);
         id += chars.substring(rnum, rnum + 1);
     }
@@ -228,7 +228,7 @@ AjaxDataTable.defaultTableRenderer = function (id, model, table_data, sort_by, w
     var data = table_data.data;
 
     html += "<table class=\"ajax-data-table-grid\" width=\"" + width + "\"><thead>";
-    for (var column = 0; column < model.length; column++) {
+    for (let column = 0; column < model.length; column++) {
         if (model[column].visible) {
             var column_title = AjaxDataTable.settings[id].headerCellRenderer(model[column]);
 
@@ -263,9 +263,9 @@ AjaxDataTable.defaultTableRenderer = function (id, model, table_data, sort_by, w
     //alert(JSON.stringify(data));
     if (data !== null && data.length) {
         html += "<tbody>";
-        for (var i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             html += "<tr row='" + i + "'>";
-            for (var column = 0; column < model.length; column++) {
+            for (let column = 0; column < model.length; column++) {
                 if (model[column].visible) {
                     var value = AjaxDataTable.settings[id].cellRenderer(model[column], table_data, i);
                     var cellClickAction = '';
@@ -292,7 +292,7 @@ AjaxDataTable.defaultTableRenderer = function (id, model, table_data, sort_by, w
         var hasSummary = false;
 
         var summaryHtml = "<tr>";
-        for (var column = 0; column < model.length; column++) {
+        for (let column = 0; column < model.length; column++) {
             if (model[column].visible) {
                 var summaryValue = AjaxDataTable.settings[id].summaryRenderer(model[column], table_data, table_data.summary[model[column].name]);
 
@@ -326,7 +326,7 @@ AjaxDataTable.defaultGridRenderer = function (id, model, table_data, sort_by, wi
     html += "<div class='ajax-data-table-grid' width=\"" + width + "\">";
 
     if (data !== null && data.length) {
-        for (var i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             html += "<div class='ajax-data-table-grid-item' row='" + i + "'>";
 
             html += AjaxDataTable.settings[id].gridCellRenderer(model, table_data, i);
@@ -356,7 +356,7 @@ AjaxDataTable.render_page_index = function (id, current_page, total_page, page_s
     var paging_list_html = "<li style='padding: 0px;'>" + texts.page + " <select onchange=\"AjaxDataTable.go_to_page('" + id + "', this.options[this.selectedIndex].value); event.preventDefault();\">";
 
     var last_i = 0;
-    for (var i = 0; i < total_page; i++) {
+    for (let i = 0; i < total_page; i++) {
         //if (Math.abs(last_i - i) === 2)
         //    paging_html += "<li>...</li>";
 
@@ -408,7 +408,7 @@ AjaxDataTable.render_bulk_actions = function (id, actions) {
         html += "<button type='button' class='btn btn-secondary dropdown-toggle' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'> " + AjaxDataTable.settings[id].texts.actions +
                 " <span class='caret'></span></button>" +
                 "<ul class='dropdown-menu dropdown-menu-right'>";
-        for (var i = actions.length - 1; i >= 0 ; i--) {
+        for (let i = actions.length - 1; i >= 0 ; i--) {
             if (actions[i].title !== null && typeof actions[i].handler === 'function') {
                 html += "<li><a href='#' onclick='AjaxDataTable.call_bulk_action(\"" + id + "\", " + i + "); event.preventDefault();'>" + (actions[i].icon !== null ? ("<i class='fa fa-" + actions[i].icon + "' aria-hidden='true'></i> ") : "") + actions[i].title + "</a></li>";
             }
@@ -416,7 +416,7 @@ AjaxDataTable.render_bulk_actions = function (id, actions) {
     }
     else {
         html = "<ul class='ajax-data-table-bulk-actions'>";
-        for (var i = actions.length - 1; i >= 0 ; i--) {
+        for (let i = actions.length - 1; i >= 0 ; i--) {
 
             if (actions[i].title !== null && typeof actions[i].handler === 'function') {
                 html += "<li><a href='#' onclick='AjaxDataTable.call_bulk_action(\"" + id + "\", " + i + "); event.preventDefault();'>" + (actions[i].icon !== null ? ("<i class='fa fa-" + actions[i].icon + "' aria-hidden='true'></i> ") : "") + actions[i].title + "</a></li>";
