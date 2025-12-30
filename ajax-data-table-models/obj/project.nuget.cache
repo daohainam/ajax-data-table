@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "fSaJ+oXf+hQ=",
+  "dgSpecHash": "id97pvm93XA=",
   "success": true,
-  "projectFilePath": "/home/runner/work/ajax-data-table/ajax-data-table/ajax-data-table-models/ajax-data-table-models.csproj",
+  "projectFilePath": "C:\\Users\\namdh\\source\\repos\\daohainam\\ajax-data-table\\ajax-data-table-models\\ajax-data-table-models.csproj",
   "expectedPackageFiles": [
-    "/home/runner/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/home/runner/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\namdh\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\namdh\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
