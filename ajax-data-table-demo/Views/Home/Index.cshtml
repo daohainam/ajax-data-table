@@ -64,7 +64,7 @@
                     },
 
                     modelProvider: function (url, onsuccess, onerror) {
-                        if (!$.isFunction(onsuccess)) {
+                        if (typeof onsuccess !== 'function') {
                             return;
                         }
 
@@ -74,7 +74,7 @@
                     },
 
                     dataProvider: function (url, params, onsuccess, onerror) {
-                        if (!$.isFunction(onsuccess)) {
+                        if (typeof onsuccess !== 'function') {
                             return;
                         }
 
