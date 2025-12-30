@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ajax-data-table")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4caab73aad20f3608f63d2b5d41447c5c159dc3e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edf6a75779b5f91041f8ff869d5be9690c6ee957")]
 [assembly: System.Reflection.AssemblyProductAttribute("ajax-data-table")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ajax-data-table")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
