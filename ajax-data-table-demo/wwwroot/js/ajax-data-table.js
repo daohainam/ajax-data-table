@@ -9,14 +9,14 @@ var AjaxDataTable = function () {
 AjaxDataTable.table_models = {};
 AjaxDataTable.table_datas = {};
 AjaxDataTable.settings = {};
-AjaxDataTable.auto_increament_id = 0;
+AjaxDataTable.auto_increment_id = 0;
 
 AjaxDataTable.generate_id = function () {
     var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
     var string_length = 4;
-    var id = 'tid_' + AjaxDataTable.auto_increament_id + '_';
+    var id = 'tid_' + AjaxDataTable.auto_increment_id + '_';
 
-    AjaxDataTable.auto_increament_id++;
+    AjaxDataTable.auto_increment_id++;
 
     for (var i = 0; i < string_length; i++) {
         var rnum = Math.floor(Math.random() * chars.length);
@@ -36,7 +36,7 @@ AjaxDataTable.cellClickedHandler = function (id, column_index, row_index) {
         //c.prop("checked", !c.prop("checked"));
     }
 
-    if ($.isFunction(AjaxDataTable.settings[id].onCellClicked)) {
+    if (typeof AjaxDataTable.settings[id].onCellClicked === 'function') {
         AjaxDataTable.settings[id].onCellClicked(table_model[column_index], table_data, row_index);
     }
 };
@@ -47,7 +47,7 @@ AjaxDataTable.headerClickedHandler = function (id, column_index) {
 
     var processEvent = true;
 
-    if ($.isFunction(AjaxDataTable.settings[id].onHeaderClicked)) {
+    if (typeof AjaxDataTable.settings[id].onHeaderClicked === 'function') {
         processEvent = AjaxDataTable.settings[id].onHeaderClicked(table_model[column_index], table_data);
     }
 
@@ -72,7 +72,7 @@ AjaxDataTable.headerClickedHandler = function (id, column_index) {
 };
 
 AjaxDataTable.defaultTableModelProvider = function (url, onsuccess, onerror) {
-    if (!$.isFunction(onsuccess) || url === null) {
+    if (typeof onsuccess !== 'function' || url === null) {
         return;
     }
 
@@ -87,7 +87,7 @@ AjaxDataTable.defaultTableModelProvider = function (url, onsuccess, onerror) {
             onsuccess(table_model);
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            if ($.isFunction(onerror)) {
+            if (typeof onerror === 'function') {
                 onerror(jqXHR, textStatus, errorThrown);
             }
         }
@@ -95,7 +95,7 @@ AjaxDataTable.defaultTableModelProvider = function (url, onsuccess, onerror) {
 };
 
 AjaxDataTable.defaultTableDataProvider = function (url, params, onsuccess, onerror) {
-    if (!$.isFunction(onsuccess) || url === null) {
+    if (typeof onsuccess !== 'function' || url === null) {
         return;
     }
 
@@ -108,7 +108,7 @@ AjaxDataTable.defaultTableDataProvider = function (url, params, onsuccess, onerr
             onsuccess(table_model);
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            if ($.isFunction(onerror)) {
+            if (typeof onerror === 'function') {
                 onerror(jqXHR, textStatus, errorThrown);
             }
         }
@@ -119,7 +119,7 @@ AjaxDataTable.RowDraggedHandler = function (id, item) {
     var table_model = AjaxDataTable.table_models[id];
     var table_data = AjaxDataTable.table_datas[id];
     //console.log(item);
-    if ($.isFunction(AjaxDataTable.settings[id].onRowDragged)) {
+    if (typeof AjaxDataTable.settings[id].onRowDragged === 'function') {
         var org_row_index = item.context.attributes.row.value;
         var new_row_index = item.context.rowIndex - 1;
 
@@ -136,7 +136,7 @@ AjaxDataTable.call_bulk_action = function (id, index) {
         return;
     }
 
-    if ($.isFunction(settings.bulkActions[index].handler)) {
+    if (typeof settings.bulkActions[index].handler === 'function') {
         var checked_boxes = $("#" + id + " input.ajax-data-table-check[type='checkbox']:checked");
         var checked_rows = [];
 
@@ -210,7 +210,7 @@ AjaxDataTable.defaultGridCellRenderer = function (table_model, table_data, row_i
 };
 
 AjaxDataTable.defaultSummaryRenderer = function (column_model, table_data, value) {
-    if (column_model.type === "check" && (value == null || value == "")) {
+    if (column_model.type === "check" && (value === null || value === "")) {
         return "<input type='checkbox' class='ajax-data-table-check-all' table='" + column_model.table_model.id + "' column='" + column_model.name + "' />";
     }
     else {
@@ -243,8 +243,8 @@ AjaxDataTable.defaultTableRenderer = function (id, model, table_data, sort_by, w
 
             if (model[column].sorting_enabled) {
 
-                if (model[column].name == AjaxDataTable.settings[id].sort_by) {
-                    if (AjaxDataTable.settings[id].sort_direction == "a") {
+                if (model[column].name === AjaxDataTable.settings[id].sort_by) {
+                    if (AjaxDataTable.settings[id].sort_direction === "a") {
                         html += "<div class='ascending'></div>";
                     }
                     else {
@@ -263,7 +263,7 @@ AjaxDataTable.defaultTableRenderer = function (id, model, table_data, sort_by, w
     //alert(JSON.stringify(data));
     if (data !== null && data.length) {
         html += "<tbody>";
-        for (i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length; i++) {
             html += "<tr row='" + i + "'>";
             for (var column = 0; column < model.length; column++) {
                 if (model[column].visible) {
@@ -271,11 +271,11 @@ AjaxDataTable.defaultTableRenderer = function (id, model, table_data, sort_by, w
                     var cellClickAction = '';
                     var cls = "";
 
-                    if ($.isFunction(AjaxDataTable.settings[id].onRowDragged) && model[column].type == "index") {
+                    if (typeof AjaxDataTable.settings[id].onRowDragged === 'function' && model[column].type === "index") {
                         cls += " ajax-data-table-drag-handler";
                     }
 
-                    if ($.isFunction(AjaxDataTable.settings[id].onCellClicked) && model[column].type != "check") {
+                    if (typeof AjaxDataTable.settings[id].onCellClicked === 'function' && model[column].type !== "check") {
                         cls += " ajax-data-table-clickable";
                         cellClickAction = " onclick='AjaxDataTable.cellClickedHandler(\"" + id + "\", " + column + ", " + i + ");' ";
                     }
@@ -326,7 +326,7 @@ AjaxDataTable.defaultGridRenderer = function (id, model, table_data, sort_by, wi
     html += "<div class='ajax-data-table-grid' width=\"" + width + "\">";
 
     if (data !== null && data.length) {
-        for (i = 0; i < data.length; i++) {
+        for (var i = 0; i < data.length; i++) {
             html += "<div class='ajax-data-table-grid-item' row='" + i + "'>";
 
             html += AjaxDataTable.settings[id].gridCellRenderer(model, table_data, i);
@@ -360,7 +360,7 @@ AjaxDataTable.render_page_index = function (id, current_page, total_page, page_s
         //if (Math.abs(last_i - i) === 2)
         //    paging_html += "<li>...</li>";
 
-        if (i === 0 || i == (total_page - 1) || (Math.abs(current_page - i) <= 3)) {
+        if (i === 0 || i === (total_page - 1) || (Math.abs(current_page - i) <= 3)) {
             if (current_page === i) {
                 paging_html += '<li class="active page-item"><a class="page-link" href="#" onclick="event.preventDefault();">' + (i + 1) + '</a></li>';
             }
@@ -370,7 +370,7 @@ AjaxDataTable.render_page_index = function (id, current_page, total_page, page_s
             last_i = i;
         }
 
-        paging_list_html += "<option value=\"" + i + "\" " + (i == current_page ? "selected='selected'" : "") + ">" + (i + 1) + "</option>";
+        paging_list_html += "<option value=\"" + i + "\" " + (i === current_page ? "selected='selected'" : "") + ">" + (i + 1) + "</option>";
     }
 
     paging_list_html += "</select></li>";
@@ -409,8 +409,8 @@ AjaxDataTable.render_bulk_actions = function (id, actions) {
                 " <span class='caret'></span></button>" +
                 "<ul class='dropdown-menu dropdown-menu-right'>";
         for (var i = actions.length - 1; i >= 0 ; i--) {
-            if (actions[i].title !== null && $.isFunction(actions[i].handler)) {
-                html += "<li><a href='#' onclick='AjaxDataTable.call_bulk_action(\"" + id + "\", " + i + "); event.preventDefault();'>" + (actions[i].icon != null ? ("<i class='fa fa-" + actions[i].icon + "' aria-hidden='true'></i> ") : "") + actions[i].title + "</a></li>";
+            if (actions[i].title !== null && typeof actions[i].handler === 'function') {
+                html += "<li><a href='#' onclick='AjaxDataTable.call_bulk_action(\"" + id + "\", " + i + "); event.preventDefault();'>" + (actions[i].icon !== null ? ("<i class='fa fa-" + actions[i].icon + "' aria-hidden='true'></i> ") : "") + actions[i].title + "</a></li>";
             }
         }
     }
@@ -418,8 +418,8 @@ AjaxDataTable.render_bulk_actions = function (id, actions) {
         html = "<ul class='ajax-data-table-bulk-actions'>";
         for (var i = actions.length - 1; i >= 0 ; i--) {
 
-            if (actions[i].title !== null && $.isFunction(actions[i].handler)) {
-                html += "<li><a href='#' onclick='AjaxDataTable.call_bulk_action(\"" + id + "\", " + i + "); event.preventDefault();'>" + (actions[i].icon != null ? ("<i class='fa fa-" + actions[i].icon + "' aria-hidden='true'></i> ") : "") + actions[i].title + "</a></li>";
+            if (actions[i].title !== null && typeof actions[i].handler === 'function') {
+                html += "<li><a href='#' onclick='AjaxDataTable.call_bulk_action(\"" + id + "\", " + i + "); event.preventDefault();'>" + (actions[i].icon !== null ? ("<i class='fa fa-" + actions[i].icon + "' aria-hidden='true'></i> ") : "") + actions[i].title + "</a></li>";
             }
         }
         html += "</ul>";
@@ -433,8 +433,7 @@ AjaxDataTable.show_hide_bulk_actions = function (id, show) {
         $("#" + id + ".ajax-data-table-container .ajax-data-table-bulk-actions").show();
     else
         $("#" + id + ".ajax-data-table-container .ajax-data-table-bulk-actions").hide();
-
-}
+};
 
 AjaxDataTable.render_with_page = function (id, url, page) {
     //get table model
@@ -449,7 +448,7 @@ AjaxDataTable.render_with_page = function (id, url, page) {
             };
             var onQuery = AjaxDataTable.settings[id].onQuery;
 
-            if ($.isFunction(onQuery)) {
+            if (typeof onQuery === 'function') {
                 let onQuery_result = onQuery();
                 //console.log(onQuery_result);
                 if (onQuery_result !== null && $.isPlainObject(onQuery_result)) {
@@ -478,12 +477,12 @@ AjaxDataTable.render_with_page = function (id, url, page) {
                         AjaxDataTable.settings[id].sort_direction = null;
                     }
 
-                    if ($.isFunction(AjaxDataTable.settings[id].onPreRender)) {
+                    if (typeof AjaxDataTable.settings[id].onPreRender === 'function') {
                         AjaxDataTable.settings[id].onPreRender(id, table_model, table_data);
                     }
 
                     var table_html;
-                    if (AjaxDataTable.settings[id].render_mode == 'grid') {
+                    if (AjaxDataTable.settings[id].render_mode === 'grid') {
                         table_html = AjaxDataTable.settings[id].gridRenderer(id, table_model, table_data, "", AjaxDataTable.settings[id].width);
                     }
                     else {
@@ -537,11 +536,11 @@ AjaxDataTable.render_with_page = function (id, url, page) {
                     if (AjaxDataTable.settings[id].loader)
                         $(".loader", table_container).hide();
 
-                    if ($.isFunction(AjaxDataTable.settings[id].onLoaded)) {
+                    if (typeof AjaxDataTable.settings[id].onLoaded === 'function') {
                         AjaxDataTable.settings[id].onLoaded(params);
                     }
 
-                    if ($.isFunction(AjaxDataTable.settings[id].onRowDragged)) {
+                    if (typeof AjaxDataTable.settings[id].onRowDragged === 'function') {
                         $("table.ajax-data-table tbody").sortable({
                             helper: function (e, ui) {
                                 ui.children().each(function () {
@@ -576,14 +575,12 @@ AjaxDataTable.go_to_page = function (id, page) {
     var paging = $(" .pagination", table_container);
 
     paging.addClass("disabled");
-    $('a', paging).bind('click', false);
+    $('a', paging).on('click', false);
     $('select', paging).prop("disabled", "disabled");
 
     $(".loader", table_container).show();
 
     AjaxDataTable.render_with_page(id, table_container.attr("href"), page);
-
-
 };
 
 AjaxDataTable.defaults = {
@@ -688,8 +685,8 @@ AjaxDataTable.render = function (o, options, refresh_options) {
 
             var table_container = $("#" + table_id + ".ajax-data-table-container", obj.parent());
 
-            if (table_container.length == 1) {
-                if (action == "refresh") {
+            if (table_container.length === 1) {
+                if (action === "refresh") {
                     var id = table_container.attr("id");
                     var href = table_container.attr("href");
                     var page = table_container.attr("page");
